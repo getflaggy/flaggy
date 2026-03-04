@@ -5,7 +5,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
 ARG VERSION=dev
-RUN CGO_ENABLED=0 go build -ldflags="-X main.version=${VERSION}" -o /bin/flaggy ./cmd/flaggy
+RUN CGO_ENABLED=0 GOARCH=$(go env GOARCH) go build -ldflags="-X main.version=${VERSION}" -o /bin/flaggy ./cmd/flaggy
 
 FROM alpine:3.21
 
