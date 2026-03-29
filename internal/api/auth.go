@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/models"
 )
 
 // RequireMasterKey returns a middleware that requires the master key for admin routes.

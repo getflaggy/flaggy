@@ -1,6 +1,6 @@
 package store
 
-import "github.com/alexis/flaggy/internal/models"
+import "github.com/getflaggy/flaggy/internal/models"
 
 // Store defines the persistence interface for flags and rules.
 type Store interface {

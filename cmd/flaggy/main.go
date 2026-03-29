@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/alexis/flaggy/cmd/flaggy/cli"
+	"github.com/getflaggy/flaggy/cmd/flaggy/cli"
 )
 
 var version = "dev"

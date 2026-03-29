@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"sort"
 
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/models"
 )
 
 const (

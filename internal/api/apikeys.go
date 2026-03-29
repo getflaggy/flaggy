@@ -5,7 +5,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/models"
 )
 
 type createAPIKeyRequest struct {

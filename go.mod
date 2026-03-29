@@ -1,4 +1,4 @@
-module github.com/alexis/flaggy
+module github.com/getflaggy/flaggy
 
 go 1.25
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/models"
 )
 
 func (s *SQLiteStore) CreateAPIKey(key *models.APIKey, hashedKey string) error {

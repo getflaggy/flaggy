@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/models"
 	"github.com/stretchr/testify/assert"
 )
 

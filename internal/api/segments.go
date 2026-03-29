@@ -8,9 +8,9 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/alexis/flaggy/internal/models"
-	"github.com/alexis/flaggy/internal/sse"
-	"github.com/alexis/flaggy/internal/store"
+	"github.com/getflaggy/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/sse"
+	"github.com/getflaggy/flaggy/internal/store"
 )
 
 func (s *Server) CreateSegment(w http.ResponseWriter, r *http.Request) {

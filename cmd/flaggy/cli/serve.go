@@ -11,11 +11,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/alexis/flaggy/internal/api"
-	"github.com/alexis/flaggy/internal/config"
-	"github.com/alexis/flaggy/internal/sse"
-	"github.com/alexis/flaggy/internal/store"
-	"github.com/alexis/flaggy/migrations"
+	"github.com/getflaggy/flaggy/internal/api"
+	"github.com/getflaggy/flaggy/internal/config"
+	"github.com/getflaggy/flaggy/internal/sse"
+	"github.com/getflaggy/flaggy/internal/store"
+	"github.com/getflaggy/flaggy/migrations"
 )
 
 func init() {

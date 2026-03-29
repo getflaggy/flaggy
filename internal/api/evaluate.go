@@ -3,8 +3,8 @@ package api
 import (
 	"net/http"
 
-	"github.com/alexis/flaggy/internal/engine"
-	"github.com/alexis/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/engine"
+	"github.com/getflaggy/flaggy/internal/models"
 )
 
 func (s *Server) Evaluate(w http.ResponseWriter, r *http.Request) {

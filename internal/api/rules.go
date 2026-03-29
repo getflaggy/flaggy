@@ -8,8 +8,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/alexis/flaggy/internal/models"
-	"github.com/alexis/flaggy/internal/sse"
+	"github.com/getflaggy/flaggy/internal/models"
+	"github.com/getflaggy/flaggy/internal/sse"
 )
 
 func (s *Server) CreateRule(w http.ResponseWriter, r *http.Request) {

@@ -3,8 +3,8 @@ package api
 import (
 	"github.com/go-chi/chi/v5"
 
-	"github.com/alexis/flaggy/internal/sse"
-	"github.com/alexis/flaggy/internal/store"
+	"github.com/getflaggy/flaggy/internal/sse"
+	"github.com/getflaggy/flaggy/internal/store"
 )
 
 // Server holds dependencies for all HTTP handlers.
