@@ -54,3 +54,24 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           build-args: VERSION=v${{ needs.release.outputs.version }}
+
+  chart:
+    needs: [release, publish]
+    if: needs.release.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: azure/setup-helm@v4
+        with:
+          version: v3.16.4
+
+      - name: Log in to GHCR
+        run: helm registry login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Package and push chart (OCI)
+        run: |
+          VERSION="${{ needs.release.outputs.version }}"
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          helm package charts/flaggy --version "$VERSION" --app-version "$VERSION"
+          helm push "flaggy-${VERSION}.tgz" "oci://ghcr.io/${OWNER_LC}/charts"
