@@ -1,0 +1,13 @@
+flaggy is deployed.
+
+Service (in-cluster):
+  http://{{ include "flaggy.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}
+
+{{- if not (or .Values.auth.existingSecret .Values.auth.masterKey) }}
+
+WARNING: no master key set -> admin auth is DISABLED (dev mode).
+Set auth.masterKey or auth.existingSecret for production.
+{{- end }}
+
+Try it via port-forward:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "flaggy.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}

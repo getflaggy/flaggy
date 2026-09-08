@@ -1,0 +1,12 @@
+apiVersion: v2
+name: flaggy
+description: Lightweight feature flag server (Go, SQLite, zero runtime dependencies)
+type: application
+version: 0.1.0
+appVersion: "1.3.1"
+home: https://github.com/getflaggy/flaggy
+sources:
+  - https://github.com/getflaggy/flaggy
+keywords: [feature-flags, feature-toggles, flags]
+maintainers:
+  - name: getflaggy
