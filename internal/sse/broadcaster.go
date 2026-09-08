@@ -39,10 +39,10 @@ func (b *Broadcaster) Subscribe() (<-chan Event, func()) {
 
 	unsub := func() {
 		b.mu.Lock()
-		delete(b.clients, id)
-		b.mu.Unlock()
-		// Drain remaining events
-		for range ch {
+		defer b.mu.Unlock()
+		if _, ok := b.clients[id]; ok {
+			delete(b.clients, id)
+			close(ch)
 		}
 	}
 

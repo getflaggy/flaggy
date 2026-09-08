@@ -21,11 +21,15 @@ func RequestLogger(next http.Handler) http.Handler {
 		}
 
 		stream := r.Header.Get("Accept") == "text/event-stream"
+		if stream {
+			slog.Info("stream connected", "path", r.URL.Path)
+		}
 		ww := &statusWriter{ResponseWriter: w, status: http.StatusOK, captureBody: !stream}
 		next.ServeHTTP(ww, r)
 
 		if stream {
-			return // SSE connections are long-lived, log on connect only
+			slog.Info("stream closed", "path", r.URL.Path, "status", ww.status, "duration", time.Since(start).String())
+			return
 		}
 
 		attrs := []any{
